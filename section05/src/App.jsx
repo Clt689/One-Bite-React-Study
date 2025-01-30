@@ -1,27 +1,33 @@
 import './App.css'
-import Header from './components/Header'
-import Main from './components/Main'
-import Footer from './components/Footer'
-import Button from './components/Button'
+import { useState } from 'react';
 
-// 부모 컴포넌트
 function App() {
-  const buttonProps = {
-    text: "메일",
-    color: "red",
-    a: 1,
-    b: 2,
-    c: 3,
-  }
-  return (
+  const [count, setCount] = useState(0);
+  const [light, setLight] = useState("off");
+
+  return(
     <>
-      <Button {...buttonProps} />
-      <Button text={"카페"}/>
-      <Button text={"블로그"}>
-        <Header/>
-      </Button>
+      <div>
+        <h1>{light}</h1>
+        <button
+          onClick={() => {
+            setLight(light === "on" ? "off" : "on");
+          }}
+        >
+          {light === "on" ? "끄기" : "켜기"}
+        </button>
+      </div>
+      <div>
+        <h1>{count}</h1>
+        <button
+          onClick={() => {
+          setCount(count + 1);
+        }}
+        >
+        플러스 +</button>
+      </div>
     </>
   )
 }
 
-export default App
+export default App;
