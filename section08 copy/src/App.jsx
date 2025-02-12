@@ -3,6 +3,7 @@ import { useState, useRef } from 'react'
 import Editor from './components/Editor'
 import Header from './components/Header'
 import List from './components/List'
+import TodoItem from './components/TodoItem'
 
 const mockData = [
   {
@@ -39,12 +40,25 @@ function App() {
     setTodos([newTodo, ...todos]);
   }
 
+  const onUpdate = (targetId) => {
+    // todos State 값들 중에
+    // targtId와 일치하는 id를 갖는 투두 아이템의 isDone 변경
+
+    // 인수 : todos 배열에서 targetId와 일치하는 id를 갖는 요소의 데이터만 바꾼 새로운 배열 
+    setTodos(todos.map((todo) =>
+      todo.id === targetId
+        ? { ...todo, isDone: !todo.isDone }
+        : todo
+      )
+    )
+  }
+
   return (
     <>
       <div className='App'>
         <Header />
         <Editor onCreate={onCreate} />
-        <List todos={todos} />
+        <List todos={todos} onUpdate={onUpdate} />
       </div>
     </>
   )
