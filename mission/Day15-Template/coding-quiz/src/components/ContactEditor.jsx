@@ -15,8 +15,20 @@ export default function ContactEditor({ onCreateContact }) {
   }
 
   const onSubmit = () => {
+    if (state.name === "") {
+      alert("이름을 입력해주세요.")
+      return;
+    }
+    else if (state.contact === "") {
+      alert("이메일(연락처)을 입력해주세요.")
+      return;
+    }
     onCreateContact(state.name, state.contact);
-    console.log(state.name, state.contact);
+    
+    setState({
+      name: "",
+      contact: "",
+    })
   }
   
   return (  
