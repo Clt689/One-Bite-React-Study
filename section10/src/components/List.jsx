@@ -34,8 +34,6 @@ const List = ({ todos, onUpdate, onDelete }) => {
         notDoneCount
       }
     }, [todos])
-
-  // const { totalCount, doneCount, notDoneCount } = getAnalyzedData();
   
   return (
     <div className="List">
