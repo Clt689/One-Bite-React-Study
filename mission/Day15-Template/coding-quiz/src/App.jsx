@@ -5,8 +5,12 @@ import { useReducer, useRef } from "react";
 
 function reducer(state, action) {
   switch (action.type) {
-    case "CREATE":
+    case "CREATE" :
       return [action.data, ...state]
+    case "DELETE":
+      return state.filter((it) => it.id !== action.targetId);  
+    default:
+      return state;
   }
 }
 
@@ -25,6 +29,13 @@ function App() {
     })
   }
 
+  const onDeleteContact = (targetId) => {
+    dispatch({
+      type: "DELETE",
+      targetId,
+    })
+  }
+
   return (
     <div className="App">
       <h2>Contact List</h2>
@@ -32,7 +43,7 @@ function App() {
         <ContactEditor onCreateContact={onCreateContact} />
       </section>
       <section>
-        <ContactList contacts={contacts} />
+        <ContactList contacts={contacts} onDeleteContact={onDeleteContact} />
       </section>
     </div>
   );
