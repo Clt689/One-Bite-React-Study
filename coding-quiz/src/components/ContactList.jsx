@@ -9,7 +9,7 @@ export default function ContactList({ contacts, onDeleteContact }) {
         <ContactItem
           key={contact.id}
           {...contact}
-          onRemoveContact={onDeleteContact}
+          onDeleteContact={onDeleteContact}
         />
       ))}
     </div>
