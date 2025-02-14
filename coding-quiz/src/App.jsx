@@ -15,8 +15,8 @@ function reducer(state, action) {
 }
 
 function App() {
-  const idRef = useRef(0);
   const [contacts, dispatch] = useReducer(reducer, [])
+  const idRef = useRef(0);
   
   const onCreateContact = (name, contact) => {
     dispatch({
