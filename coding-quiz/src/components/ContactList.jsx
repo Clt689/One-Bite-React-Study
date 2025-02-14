@@ -1,7 +1,7 @@
 import "./ContactList.css";
 import ContactItem from "./ContactItem";
 
-export default function ContactList({contacts, onDeleteContact}) {
+export default function ContactList({ contacts, onRemoveContact }) {
   return (
     <div className="ContactList">
       <div className="title">Contact List</div>
@@ -9,9 +9,9 @@ export default function ContactList({contacts, onDeleteContact}) {
         <ContactItem
           key={contact.id}
           {...contact}
-          onDeleteContact={onDeleteContact}
+          onRemoveContact={onRemoveContact}
         />
-      ))}      
+      ))}
     </div>
   );
 }
