@@ -1,5 +1,5 @@
 import "./App.css";
-import { useReducer, useRef, useCallback } from "react";
+import { useReducer, useMemo, useRef, useCallback, createContext, memo } from "react";
 import ContactEditor from "./components/ContactEditor";
 import ContactList from "./components/ContactList";
 
@@ -13,6 +13,12 @@ function reducer(state, action) {
       return state;
   }
 }
+
+// contacts State를 공급할 Context 객체 생성
+export const ContactStateContext = createContext();
+
+// onCreateContact, onRemoveContact를 공급할 Context 객체 생성
+export const ContactDispatchContext = createContext();
 
 function App() {
   const [contacts, dispatch] = useReducer(reducer, [])
@@ -36,18 +42,25 @@ function App() {
     });
   }, [])
 
+  const memoizedDispatches = useMemo(() => (
+    { onCreateContact, onDeleteContact }
+  ), []);
+
   return (
     <div className="App">
-      <h2>Contact List</h2>
-      <section>
-        <ContactEditor onCreateContact={onCreateContact} />
-      </section>
-      <section>
-        <ContactList
-          contacts={contacts}
-          onDeleteContact={onDeleteContact}
-        />
-      </section>
+      {/* 3. contact State 공급을 위해 Context.Provider 설정 */}
+      <ContactStateContext.Provider value={contacts}>
+        {/* 4. onCreateContact, onRemoveContact 공급을 위해 Context.Provider 설정 */}
+        <ContactDispatchContext.Provider value={memoizedDispatches}>
+          <h2>Contact List</h2>
+          <section>
+            <ContactEditor />
+          </section>
+          <section>
+            <ContactList />
+          </section>
+        </ContactDispatchContext.Provider>
+      </ContactStateContext.Provider>
     </div>
   );
 }

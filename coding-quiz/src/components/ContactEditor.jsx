@@ -1,7 +1,11 @@
 import "./ContactEditor.css";
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
+import { ContactDispatchContext } from "../App";
 
-export default function ContactEditor({ onCreateContact }) {
+export default function ContactEditor() {
+  // Context 객체로부터 onCreateContact 함수를 공급받도록 수정
+  const { onCreateContact } = useContext(ContactDispatchContext);
+
   const nameRef = useRef();
   const contactRef = useRef();
   

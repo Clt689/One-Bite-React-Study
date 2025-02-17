@@ -1,7 +1,11 @@
 import "./ContactList.css";
 import ContactItem from "./ContactItem";
+import { useContext } from "react";
+import { ContactStateContext } from "../App";
 
-export default function ContactList({ contacts, onDeleteContact }) {
+export default function ContactList() {
+  const contacts = useContext(ContactStateContext);
+
   return (
     <div className="ContactList">
       <div className="title">Contact List</div>
@@ -9,7 +13,6 @@ export default function ContactList({ contacts, onDeleteContact }) {
         <ContactItem
           key={contact.id}
           {...contact}
-          onDeleteContact={onDeleteContact}
         />
       ))}
     </div>
