@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import New from './pages/New';
 import Diary from './pages/Diary';
 import Notfound from './pages/Notfound';
-import Edit from './pages/Edit';
+import { getEmotionImage } from './util/get-emotion-image';
 
 // 1. "/" : 모든 일기를 조회하는 Home 페이지(메인)
 // 2. "/new" : 새로운 일기를 작성하는 New 페이지
@@ -17,7 +17,15 @@ function App() {
   };
 
   return (
-    <>
+    <>      
+      <div>
+        <img src={getEmotionImage(1)} />
+        <img src={getEmotionImage(2)} />
+        <img src={getEmotionImage(3)} />
+        <img src={getEmotionImage(4)} />
+        <img src={getEmotionImage(5)} />
+      </div>
+
       <div>
         <Link to={"/"}>Home</Link>
         <Link to={"/new"}>New</Link>
@@ -29,7 +37,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/new" element={<New />} />
         <Route path="/diary/:id" element={<Diary />} />
-        <Route path="/edit/:id" element={<Edit />} />
         <Route path="*" element={<Notfound />} />
       </Routes>
     </>
