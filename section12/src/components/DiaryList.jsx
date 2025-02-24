@@ -1,5 +1,6 @@
 import Button from "./Button";
 import './DiaryList.css';
+import DiaryItem from "./DiaryItem";
 
 const DiaryList = () => {
   return (
@@ -12,6 +13,7 @@ const DiaryList = () => {
         <Button text={"새 일기 쓰기"} type={"POSITIVE"}/>
       </div>
       <div className="list_wrapper">  {/* 다이어리 리스트 */}
+        <DiaryItem />
       </div>
     </div>
   );

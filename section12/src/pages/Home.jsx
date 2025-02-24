@@ -3,7 +3,6 @@ import Button from "../components/Button"
 import DiaryList from "../components/DiaryList";
 
 const Home = () => {
-
   return (
     <div>
       <Header

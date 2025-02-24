@@ -10,8 +10,7 @@
 
 /* POSITIVE 버튼 */
 .Button_POSITIVE {
-  background-color: rgb(100, 201, 150);
-  /* background-color: rgb(100, 201, 100); */
+  background-color: rgb(100, 201, 100);
   color: white;
 }
 
