@@ -62,4 +62,7 @@
 
 .DiaryItem .button_section {
   min-width: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }

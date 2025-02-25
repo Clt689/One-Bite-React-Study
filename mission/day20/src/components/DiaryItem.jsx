@@ -30,6 +30,11 @@ const DiaryItem = ({ id, emotionId, createdDate, content }) => {
           onClick={() => nav(`/edit/${id}`)}
           text={"수정하기"}
         />
+        <Button
+          onClick={() => nav(`/edit/${id}`)}
+          text={"삭제하기"}
+          type={"NEGATIVE"}
+        />
       </div>
     </div>
   );
