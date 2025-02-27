@@ -53,7 +53,7 @@ const Editor = ({ initData, onSubmit }) => {
   const nav = useNavigate();
 
   useEffect(() => {
-    if (initData) {
+    if (initData) {  // initData가 실제 존재하게 된다면,
       setInput({
         ...initData,
         createdDate: new Date(Number(initData.createdDate)),
@@ -64,7 +64,7 @@ const Editor = ({ initData, onSubmit }) => {
   const onChangeInput = (e) => {
     // console.log(e.target.name); // 어떤 요소에 입력이 들어온건지 받아옴
     // console.log(e.target.value); // 입력된 값이 무엇인지 받아옴
-  
+
     let name = e.target.name;
     let value = e.target.value;
 
@@ -77,7 +77,7 @@ const Editor = ({ initData, onSubmit }) => {
       [name]: value,
     })
   }
-  
+
   const onClickSubmitButton = () => {
     onSubmit(input);
   }
