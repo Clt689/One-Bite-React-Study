@@ -5,7 +5,6 @@
 
 - 공식 카페의 [한입 FE 챌린지 3기](https://cafe.naver.com/winterlood/294)에 참여 중입니다.
 - [챌린지 진도표](https://cafe.naver.com/winterlood/297)
-
 <br>
 
 ### 참여 기간 📆
@@ -13,5 +12,6 @@
 
 <br>
 
-### 프로젝트 배포
+### 프로젝트 URL
 - URL : [감정 일기장](https://emotion-diary-j0s5z5q1t-kx1302-navercoms-projects.vercel.app/)
+- 공부하며 배운 내용은 [여기](https://velog.io/@nadnerde/series/%ED%95%9C-%EC%9E%85-FE-%EC%B1%8C%EB%A6%B0%EC%A7%80)에 정리해 두었습니다✍🏻
