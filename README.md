@@ -10,3 +10,8 @@
 
 ### 참여 기간 📆
 - **25.01.13(월) ~ 25.02.18(화)**, 주말 및 공휴일 제외
+
+<br>
+
+### 프로젝트 배포
+- URL : [감정 일기장](https://emotion-diary-j0s5z5q1t-kx1302-navercoms-projects.vercel.app/)
