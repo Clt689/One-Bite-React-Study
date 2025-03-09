@@ -12,6 +12,6 @@
 
 <br>
 
-### 프로젝트 URL
+### 프로젝트 URL 🔗
 - URL : [감정 일기장](https://emotion-diary-j0s5z5q1t-kx1302-navercoms-projects.vercel.app/)
 - 강의를 들으며 배운 내용은 [여기](https://velog.io/@nadnerde/series/%ED%95%9C-%EC%9E%85-FE-%EC%B1%8C%EB%A6%B0%EC%A7%80)에 정리해 두었습니다✍🏻
